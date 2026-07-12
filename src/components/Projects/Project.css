@@ -1,0 +1,773 @@
+/* =====================================================
+                    PROJECT SECTION
+===================================================== */
+
+.projects{
+
+    position:relative;
+
+    padding:120px 8%;
+
+    overflow:hidden;
+
+}
+
+/* =====================================================
+                    HEADING
+===================================================== */
+
+.project-heading{
+
+    text-align:center;
+
+    font-size:58px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    margin-bottom:80px;
+
+    letter-spacing:-1px;
+
+}
+
+.project-heading span{
+
+    background:linear-gradient(
+    135deg,
+    #3B82F6,
+    #8B5CF6);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+/* =====================================================
+                    CARD
+===================================================== */
+
+.project-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+    margin-bottom:70px;
+
+    padding:28px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(22px);
+
+    transition:.45s;
+
+}
+
+/* Animated Border */
+
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:1px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(59,130,246,.45),
+        rgba(139,92,246,.35),
+        transparent);
+
+    -webkit-mask:
+
+    linear-gradient(#fff 0 0) content-box,
+
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+            mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+/* Glow */
+
+.project-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-80px;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(59,130,246,.12),
+
+    transparent 70%);
+
+    opacity:0;
+
+    transition:.45s;
+
+    z-index:-1;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(59,130,246,.18);
+
+    box-shadow:
+
+    0 35px 80px rgba(0,0,0,.35);
+
+}
+
+.project-card:hover::after{
+
+    opacity:1;
+
+}
+
+/* =====================================================
+                    IMAGE
+===================================================== */
+
+.project-image{
+
+    position:relative;
+
+    width:50%;
+
+    height:360px;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+}
+
+.project-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.project-card:hover .project-image img{
+
+    transform:scale(1.08);
+
+}
+
+/* Dark Overlay */
+
+.project-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    background:linear-gradient(
+
+    rgba(15,23,42,.15),
+
+    rgba(15,23,42,.82));
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.project-image:hover .project-overlay{
+
+    opacity:1;
+
+}
+
+/* =====================================================
+                GITHUB & LIVE BUTTONS
+===================================================== */
+
+.project-overlay a{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:600;
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #8B5CF6);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 15px 35px rgba(59,130,246,.25);
+
+}
+
+.project-overlay a::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.35),
+
+    transparent);
+
+    transition:.8s;
+
+}
+
+.project-overlay a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.project-overlay a:hover::before{
+
+    left:120%;
+
+}
+/* =====================================================
+                    PROJECT CONTENT
+===================================================== */
+
+.project-content{
+
+    width:50%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.project-content h3{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    margin-bottom:16px;
+
+    letter-spacing:-1px;
+
+}
+
+.project-content p{
+
+    color:#94A3B8;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+    margin-bottom:28px;
+
+}
+
+/* =====================================================
+                    TECH STACK
+===================================================== */
+
+.tech-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+.tech-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    color:#E2E8F0;
+
+    font-size:14px;
+
+    transition:.35s;
+
+}
+
+.tech-icon svg{
+
+    font-size:20px;
+
+    color:#60A5FA;
+
+    transition:.35s;
+
+}
+
+.tech-icon:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(59,130,246,.30);
+
+    background:rgba(59,130,246,.10);
+
+    box-shadow:
+
+    0 15px 35px rgba(59,130,246,.18);
+
+}
+
+.tech-icon:hover svg{
+
+    transform:rotate(-8deg) scale(1.15);
+
+    color:#3B82F6;
+
+}
+
+/* =====================================================
+                    MORE BUTTON
+===================================================== */
+
+.more-btn{
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #8B5CF6);
+
+    transition:.35s;
+
+}
+
+.more-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 18px 35px rgba(59,130,246,.30);
+
+}
+
+/* =====================================================
+                    VIEW BRIEF
+===================================================== */
+
+.brief-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:max-content;
+
+    padding:15px 34px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #8B5CF6);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 18px 35px rgba(59,130,246,.25);
+
+}
+
+.brief-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.35),
+
+    transparent);
+
+    transition:.8s;
+
+}
+
+.brief-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 25px 50px rgba(59,130,246,.35);
+
+}
+
+.brief-btn:hover::before{
+
+    left:120%;
+
+}
+/* =====================================================
+                    PROJECT CONTENT
+===================================================== */
+
+.project-content{
+
+    width:50%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.project-content h3{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    margin-bottom:16px;
+
+    letter-spacing:-1px;
+
+}
+
+.project-content p{
+
+    color:#94A3B8;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+    margin-bottom:28px;
+
+}
+
+/* =====================================================
+                    TECH STACK
+===================================================== */
+
+.tech-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+.tech-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    color:#E2E8F0;
+
+    font-size:14px;
+
+    transition:.35s;
+
+}
+
+.tech-icon svg{
+
+    font-size:20px;
+
+    color:#60A5FA;
+
+    transition:.35s;
+
+}
+
+.tech-icon:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(59,130,246,.30);
+
+    background:rgba(59,130,246,.10);
+
+    box-shadow:
+
+    0 15px 35px rgba(59,130,246,.18);
+
+}
+
+.tech-icon:hover svg{
+
+    transform:rotate(-8deg) scale(1.15);
+
+    color:#3B82F6;
+
+}
+
+/* =====================================================
+                    MORE BUTTON
+===================================================== */
+
+.more-btn{
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #8B5CF6);
+
+    transition:.35s;
+
+}
+
+.more-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 18px 35px rgba(59,130,246,.30);
+
+}
+
+/* =====================================================
+                    VIEW BRIEF
+===================================================== */
+
+.brief-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:max-content;
+
+    padding:15px 34px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #8B5CF6);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 18px 35px rgba(59,130,246,.25);
+
+}
+
+.brief-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.35),
+
+    transparent);
+
+    transition:.8s;
+
+}
+
+.brief-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 25px 50px rgba(59,130,246,.35);
+
+}
+
+.brief-btn:hover::before{
+
+    left:120%;
+
+}

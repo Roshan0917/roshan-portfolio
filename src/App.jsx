@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails";
+import useLenis from "./hooks/useLenis";
 
 function App() {
+  useLenis();
+
   return (
     <BrowserRouter>
       <Routes>

@@ -11,6 +11,13 @@ box-sizing:border-box;
 
 }
 
+html,
+body,
+#root,
+* {
+    cursor: none !important;
+}
+
 
 html{
 
@@ -158,5 +165,13 @@ padding:0 18px;
 
 }
 
+
+}
+
+@media(max-width:900px){
+
+*{
+    cursor:auto;
+}
 
 }

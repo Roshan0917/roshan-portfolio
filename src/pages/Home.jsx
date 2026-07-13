@@ -5,6 +5,8 @@ import Background from "../components/Background/Background";
 import TechStack from "../components/TechStack/TechStack";
 import Project from "../components/Projects/Project";
 import Contact from "../components/Contact/Contact";
+import Timeline from "../components/Timeline/Timeline";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
   return (
@@ -15,7 +17,9 @@ function Home() {
       <About />
       <TechStack />
       <Project />
+      <Timeline/>
       <Contact />
+      <Footer/>
     </>
   );
 }

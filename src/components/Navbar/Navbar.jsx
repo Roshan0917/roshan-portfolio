@@ -7,8 +7,8 @@ function Navbar() {
 
 
 const [scrolled,setScrolled]=useState(false);
-
 const [menuOpen,setMenuOpen]=useState(false);
+const [active,setActive]=useState("home");
 
 
 
@@ -17,9 +17,51 @@ useEffect(()=>{
 
 const handleScroll=()=>{
 
+
 setScrolled(window.scrollY > 20);
 
+
+
+const sections=[
+"home",
+"about",
+"skills",
+"projects",
+"contact"
+];
+
+
+let current="home";
+
+
+sections.forEach((id)=>{
+
+
+const section=document.getElementById(id);
+
+
+if(section){
+
+const sectionTop = section.offsetTop - 200;
+
+
+if(window.scrollY >= sectionTop){
+
+current=id;
+
+}
+
+}
+
+
+});
+
+
+setActive(current);
+
+
 };
+
 
 
 window.addEventListener(
@@ -27,6 +69,8 @@ window.addEventListener(
 handleScroll
 );
 
+
+handleScroll();
 
 
 return()=>{
@@ -45,36 +89,6 @@ handleScroll
 
 
 
-useEffect(()=>{
-
-
-if(menuOpen){
-
-document.body.style.overflow="hidden";
-
-}
-
-else{
-
-document.body.style.overflow="auto";
-
-}
-
-
-
-return()=>{
-
-document.body.style.overflow="auto";
-
-};
-
-
-},[menuOpen]);
-
-
-
-
-
 const closeMenu=()=>{
 
 setMenuOpen(false);
@@ -84,12 +98,43 @@ setMenuOpen(false);
 
 
 
+const navItems=[
+
+{
+name:"Home",
+id:"home"
+},
+
+{
+name:"About",
+id:"about"
+},
+
+{
+name:"Tech Stack",
+id:"skills"
+},
+
+{
+name:"Projects",
+id:"projects"
+},
+
+{
+name:"Contact",
+id:"contact"
+}
+
+];
+
+
+
+
 
 return(
 
-
 <header 
-className={`navbar ${scrolled ? "scrolled" : ""}`}
+className={`navbar ${scrolled?"scrolled":""}`}
 >
 
 
@@ -97,16 +142,10 @@ className={`navbar ${scrolled ? "scrolled" : ""}`}
 
 
 
-
-
-<a
-
+<a 
 href="#home"
-
 className="logo"
-
 onClick={closeMenu}
-
 >
 
 Roshan<span>.</span>
@@ -117,10 +156,7 @@ Roshan<span>.</span>
 
 
 
-
-
-<nav
-
+<nav 
 className={
 menuOpen
 ?
@@ -128,33 +164,41 @@ menuOpen
 :
 "nav-links"
 }
-
 >
 
 
-<a href="#home" onClick={closeMenu}>
-Home
+{
+
+navItems.map((item)=>(
+
+
+<a
+
+key={item.id}
+
+href={`#${item.id}`}
+
+className={
+active===item.id
+?
+"active"
+:
+""
+}
+
+onClick={closeMenu}
+
+>
+
+{item.name}
+
 </a>
 
 
-<a href="#about" onClick={closeMenu}>
-About
-</a>
+))
 
 
-<a href="#skills" onClick={closeMenu}>
-Tech Stack
-</a>
-
-
-<a href="#projects" onClick={closeMenu}>
-Projects
-</a>
-
-
-<a href="#contact" onClick={closeMenu}>
-Contact
-</a>
+}
 
 
 </nav>
@@ -170,23 +214,15 @@ className="menu-btn"
 
 onClick={()=>setMenuOpen(!menuOpen)}
 
-aria-label="Menu"
-
 >
 
 
 {
-
 menuOpen
-
 ?
-
 <HiOutlineX/>
-
 :
-
 <HiOutlineMenuAlt3/>
-
 }
 
 

@@ -1,0 +1,68 @@
+.custom-cursor{
+
+position:fixed;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:#3b82f6;
+
+pointer-events:none;
+
+z-index:999999;
+
+transform:translate(-50%,-50%);
+
+box-shadow:
+0 0 25px #3b82f6;
+
+transition:
+width .25s ease,
+height .25s ease,
+background .25s ease;
+
+cursor:none !important;
+
+}
+
+
+.cursor-hover{
+
+width:45px;
+
+height:45px;
+
+background:
+rgba(59,130,246,.25);
+
+border:
+1px solid #3b82f6;
+
+backdrop-filter:blur(5px);
+
+}
+
+
+
+@media(max-width:900px){
+
+.custom-cursor{
+
+display:none;
+
+}
+
+
+html,
+body,
+#root,
+*{
+
+cursor:auto !important;
+
+}
+
+}

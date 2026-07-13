@@ -1,5 +1,5 @@
 import "./TechStack.css";
-import techStack from "../../data/techStack";
+import techStack from "../../data/TechStack";
 import TechCard from "./TechCard";
 
 function TechStack() {

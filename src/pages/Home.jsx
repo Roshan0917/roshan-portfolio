@@ -5,7 +5,7 @@ import Background from "../components/Background/Background";
 import TechStack from "../components/TechStack/TechStack";
 import Project from "../components/Projects/Project";
 import Contact from "../components/Contact/Contact";
-import Timeline from "../components/Timeline/Timeline";
+import Timeline from "../components/TimeLine/TimeLine";
 import Footer from "../components/Footer/Footer";
 
 function Home() {

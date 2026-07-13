@@ -1,5 +1,5 @@
 /* =====================================================
-                    PROJECT SECTION
+                 PROJECT SECTION
 ===================================================== */
 
 .projects{
@@ -12,9 +12,11 @@
 
 }
 
+
 /* =====================================================
-                    HEADING
+                 HEADING
 ===================================================== */
+
 
 .project-heading{
 
@@ -22,22 +24,24 @@
 
     font-size:58px;
 
-    font-weight:800;
+    font-weight:900;
 
     color:#fff;
 
-    margin-bottom:80px;
+    margin-bottom:90px;
 
-    letter-spacing:-1px;
+    letter-spacing:-2px;
 
 }
+
 
 .project-heading span{
 
     background:linear-gradient(
-    135deg,
-    #3B82F6,
-    #8B5CF6);
+        135deg,
+        #3b82f6,
+        #8b5cf6
+    );
 
     -webkit-background-clip:text;
 
@@ -45,41 +49,60 @@
 
 }
 
+
+
 /* =====================================================
-                    CARD
+                 PROJECT CARD
 ===================================================== */
+
 
 .project-card{
 
-    position:relative;
 
-    display:flex;
+    display:grid;
 
-    align-items:center;
+    grid-template-columns:42% 58%;
 
-    gap:50px;
+    gap:45px;
+
+    padding:35px;
 
     margin-bottom:70px;
 
-    padding:28px;
+    border-radius:32px;
 
-    border-radius:30px;
 
-    overflow:hidden;
+    background:
 
-    background:rgba(255,255,255,.05);
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.02)
+    );
 
-    border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(22px);
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+    backdrop-filter:blur(20px);
+
 
     transition:.45s;
 
+
+    position:relative;
+
+    overflow:hidden;
+
 }
 
-/* Animated Border */
+
+
 
 .project-card::before{
+
 
     content:"";
 
@@ -87,93 +110,73 @@
 
     inset:0;
 
-    padding:1px;
-
-    border-radius:30px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(59,130,246,.45),
-        rgba(139,92,246,.35),
-        transparent);
-
-    -webkit-mask:
-
-    linear-gradient(#fff 0 0) content-box,
-
-    linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-
-            mask-composite:exclude;
-
-    pointer-events:none;
-
-}
-
-/* Glow */
-
-.project-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-80px;
 
     background:
 
-    radial-gradient(circle,
+    linear-gradient(
+    135deg,
+    rgba(59,130,246,.35),
+    transparent,
+    rgba(139,92,246,.25)
+    );
 
-    rgba(59,130,246,.12),
-
-    transparent 70%);
 
     opacity:0;
 
     transition:.45s;
 
-    z-index:-1;
 
 }
 
-.project-card:hover{
 
-    transform:translateY(-12px);
 
-    border-color:rgba(59,130,246,.18);
-
-    box-shadow:
-
-    0 35px 80px rgba(0,0,0,.35);
-
-}
-
-.project-card:hover::after{
+.project-card:hover::before{
 
     opacity:1;
 
 }
 
-/* =====================================================
-                    IMAGE
-===================================================== */
 
-.project-image{
 
-    position:relative;
+.project-card:hover{
 
-    width:50%;
 
-    height:360px;
+    transform:translateY(-12px);
 
-    overflow:hidden;
 
-    border-radius:24px;
+    box-shadow:
+
+    0 35px 90px rgba(0,0,0,.45);
+
 
 }
 
+
+
+
+/* =====================================================
+                 IMAGE
+===================================================== */
+
+
+.project-image{
+
+
+    position:relative;
+
+    height:360px;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+
+}
+
+
+
 .project-image img{
+
 
     width:100%;
 
@@ -181,19 +184,18 @@
 
     object-fit:cover;
 
+
     transition:.7s;
 
 }
 
-.project-card:hover .project-image img{
 
-    transform:scale(1.08);
 
-}
 
-/* Dark Overlay */
+/* IMAGE OVERLAY */
 
-.project-overlay{
+
+.image-overlay{
 
     position:absolute;
 
@@ -201,109 +203,90 @@
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
     gap:18px;
 
-    background:linear-gradient(
-
-    rgba(15,23,42,.15),
-
-    rgba(15,23,42,.82));
+    background:
+    linear-gradient(
+    rgba(15,23,42,.2),
+    rgba(15,23,42,.85)
+    );
 
     opacity:0;
+
+    pointer-events:none;
 
     transition:.4s;
 
 }
 
-.project-image:hover .project-overlay{
 
-    opacity:1;
 
-}
 
-/* =====================================================
-                GITHUB & LIVE BUTTONS
-===================================================== */
+.image-overlay a{
 
-.project-overlay a{
 
-    position:relative;
+    display:flex;
 
-    overflow:hidden;
+    align-items:center;
 
-    padding:14px 28px;
+    gap:8px;
 
-    border-radius:999px;
+
+    padding:13px 25px;
+
+
+    border-radius:50px;
+
 
     text-decoration:none;
 
-    color:#fff;
+
+    color:white;
+
 
     font-weight:600;
 
-    background:linear-gradient(
+
+    background:
+
+    linear-gradient(
     135deg,
-    #2563EB,
-    #8B5CF6);
+    #2563eb,
+    #8b5cf6
+    );
+
 
     transition:.35s;
 
-    box-shadow:
-
-    0 15px 35px rgba(59,130,246,.25);
 
 }
 
-.project-overlay a::before{
 
-    content:"";
 
-    position:absolute;
 
-    left:-120%;
+.image-overlay a:hover{
 
-    top:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    rgba(255,255,255,.35),
-
-    transparent);
-
-    transition:.8s;
-
-}
-
-.project-overlay a:hover{
 
     transform:translateY(-5px);
 
-}
-
-.project-overlay a:hover::before{
-
-    left:120%;
 
 }
+
+
+
+
 /* =====================================================
-                    PROJECT CONTENT
+                 CONTENT
 ===================================================== */
+
+
 
 .project-content{
 
-    width:50%;
 
     display:flex;
 
@@ -311,463 +294,829 @@
 
     justify-content:center;
 
-}
 
-.project-content h3{
+    position:relative;
 
-    font-size:42px;
+    z-index:2;
 
-    font-weight:800;
-
-    color:#fff;
-
-    margin-bottom:16px;
-
-    letter-spacing:-1px;
 
 }
 
-.project-content p{
 
-    color:#94A3B8;
 
-    line-height:1.9;
 
-    font-size:17px;
+.project-status{
 
-    margin-bottom:28px;
 
-}
+    width:max-content;
 
-/* =====================================================
-                    TECH STACK
-===================================================== */
-
-.tech-container{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:14px;
-
-    margin-bottom:35px;
-
-}
-
-.tech-icon{
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
 
-    padding:12px 18px;
+    gap:8px;
 
-    border-radius:999px;
 
-    background:rgba(255,255,255,.05);
+    padding:7px 16px;
 
-    border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(16px);
+    border-radius:50px;
 
-    color:#E2E8F0;
 
-    font-size:14px;
+    color:#60a5fa;
 
-    transition:.35s;
 
-}
+    background:
 
-.tech-icon svg{
+    rgba(96,165,250,.12);
 
-    font-size:20px;
 
-    color:#60A5FA;
+    border:
 
-    transition:.35s;
+    1px solid rgba(96,165,250,.25);
 
-}
 
-.tech-icon:hover{
+    font-size:13px;
 
-    transform:translateY(-5px);
 
-    border-color:rgba(59,130,246,.30);
+    margin-bottom:18px;
 
-    background:rgba(59,130,246,.10);
-
-    box-shadow:
-
-    0 15px 35px rgba(59,130,246,.18);
 
 }
 
-.tech-icon:hover svg{
 
-    transform:rotate(-8deg) scale(1.15);
 
-    color:#3B82F6;
+
+
+.project-content h3{
+
+
+    font-size:42px;
+
+
+    font-weight:900;
+
+
+    margin-bottom:10px;
+
+
+    color:white;
+
 
 }
 
-/* =====================================================
-                    MORE BUTTON
-===================================================== */
 
-.more-btn{
 
-    padding:12px 18px;
 
-    border:none;
+.project-content h5{
 
-    border-radius:999px;
 
-    cursor:pointer;
+    font-size:17px;
 
-    font-size:14px;
 
     font-weight:600;
 
-    color:#fff;
 
-    background:linear-gradient(
-    135deg,
-    #2563EB,
-    #8B5CF6);
+    color:#60a5fa;
 
-    transition:.35s;
+
+    margin-bottom:20px;
+
 
 }
 
-.more-btn:hover{
 
-    transform:translateY(-4px);
 
-    box-shadow:
 
-    0 18px 35px rgba(59,130,246,.30);
+
+.project-content p{
+
+
+    color:#94a3b8;
+
+
+    font-size:16px;
+
+
+    line-height:1.9;
+
+
+    margin-bottom:28px;
+
 
 }
+
+
 
 /* =====================================================
-                    VIEW BRIEF
+                 TECH STACK
 ===================================================== */
 
-.brief-btn{
 
-    position:relative;
 
-    overflow:hidden;
+.tech-container{
 
-    width:max-content;
-
-    padding:15px 34px;
-
-    border:none;
-
-    border-radius:999px;
-
-    cursor:pointer;
-
-    color:#fff;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    background:linear-gradient(
-    135deg,
-    #2563EB,
-    #8B5CF6);
-
-    transition:.35s;
-
-    box-shadow:
-
-    0 18px 35px rgba(59,130,246,.25);
-
-}
-
-.brief-btn::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:-120%;
-
-    top:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    rgba(255,255,255,.35),
-
-    transparent);
-
-    transition:.8s;
-
-}
-
-.brief-btn:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-
-    0 25px 50px rgba(59,130,246,.35);
-
-}
-
-.brief-btn:hover::before{
-
-    left:120%;
-
-}
-/* =====================================================
-                    PROJECT CONTENT
-===================================================== */
-
-.project-content{
-
-    width:50%;
 
     display:flex;
 
-    flex-direction:column;
+    flex-wrap:wrap;
+
+
+    gap:12px;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+
+.tech-icon{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:9px;
+
+
+    padding:11px 16px;
+
+
+    border-radius:50px;
+
+
+    color:#e2e8f0;
+
+
+    background:
+
+    rgba(255,255,255,.06);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+
+    font-size:14px;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+.tech-icon svg{
+
+
+    font-size:20px;
+
+
+    color:#60a5fa;
+
+
+}
+
+
+
+
+.tech-icon:hover{
+
+
+    transform:translateY(-5px);
+
+
+    background:
+
+    rgba(59,130,246,.15);
+
+
+    border-color:#3b82f6;
+
+
+}
+
+
+
+/* =====================================================
+                 BUTTONS
+===================================================== */
+
+
+
+.more-btn,
+
+
+.brief-btn{
+
+
+    width:max-content;
+
+
+    border:none;
+
+
+    cursor:pointer;
+
+
+    color:white;
+
+
+    font-weight:600;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #8b5cf6
+    );
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.more-btn{
+
+
+    padding:11px 20px;
+
+
+}
+
+
+
+.brief-btn{
+
+
+    padding:15px 32px;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+.more-btn:hover,
+
+.brief-btn:hover{
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+
+    0 20px 45px rgba(59,130,246,.35);
+
+
+}
+
+
+
+
+/* =====================================================
+                 MODAL
+===================================================== */
+
+
+
+.modal{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    display:flex;
+
 
     justify-content:center;
 
-}
 
-.project-content h3{
+    align-items:center;
 
-    font-size:42px;
 
-    font-weight:800;
+    background:
 
-    color:#fff;
+    rgba(0,0,0,.65);
 
-    margin-bottom:16px;
 
-    letter-spacing:-1px;
+    backdrop-filter:blur(10px);
 
-}
 
-.project-content p{
+    z-index:999;
 
-    color:#94A3B8;
-
-    line-height:1.9;
-
-    font-size:17px;
-
-    margin-bottom:28px;
 
 }
 
-/* =====================================================
-                    TECH STACK
-===================================================== */
 
-.tech-container{
+
+
+
+.modal-box{
+
+
+    width:500px;
+
+
+    max-width:90%;
+
+
+    padding:35px;
+
+
+    border-radius:25px;
+
+
+    background:#111827;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    color:white;
+
+
+}
+
+
+
+.modal-box h2{
+
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+.all-tech{
+
 
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:14px;
-
-    margin-bottom:35px;
+    gap:15px;
 
 }
 
-.tech-icon{
+
+
+.all-tech-item{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    padding:12px 18px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+}
+
+
+
+.modal-box button{
+
+
+    margin-top:25px;
+
+
+    padding:12px 25px;
+
+
+    border:none;
+
+
+    border-radius:50px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+/* PROJECT BRIEF */
+
+
+.brief-box p{
+
+
+    color:#cbd5e1;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+.brief-box li{
+
+
+    margin:12px 0;
+
+
+    color:#e2e8f0;
+
+
+}
+
+
+
+.modal-buttons{
+
+
+    display:flex;
+
+
+    gap:15px;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+
+.modal-buttons a{
+
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:8px;
 
-    padding:12px 18px;
 
-    border-radius:999px;
+    text-decoration:none;
 
-    background:rgba(255,255,255,.05);
 
-    border:1px solid rgba(255,255,255,.08);
+    color:white;
 
-    backdrop-filter:blur(16px);
 
-    color:#E2E8F0;
+    padding:12px 22px;
 
-    font-size:14px;
 
-    transition:.35s;
+    border-radius:50px;
 
-}
 
-.tech-icon svg{
+    background:
 
-    font-size:20px;
-
-    color:#60A5FA;
-
-    transition:.35s;
-
-}
-
-.tech-icon:hover{
-
-    transform:translateY(-5px);
-
-    border-color:rgba(59,130,246,.30);
-
-    background:rgba(59,130,246,.10);
-
-    box-shadow:
-
-    0 15px 35px rgba(59,130,246,.18);
-
-}
-
-.tech-icon:hover svg{
-
-    transform:rotate(-8deg) scale(1.15);
-
-    color:#3B82F6;
-
-}
-
-/* =====================================================
-                    MORE BUTTON
-===================================================== */
-
-.more-btn{
-
-    padding:12px 18px;
-
-    border:none;
-
-    border-radius:999px;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    color:#fff;
-
-    background:linear-gradient(
+    linear-gradient(
     135deg,
-    #2563EB,
-    #8B5CF6);
+    #2563eb,
+    #8b5cf6
+    );
 
-    transition:.35s;
+
+}
+
+
+
+
+
+/* ======================================
+        DESKTOP HOVER ONLY
+====================================== */
+
+@media (hover:hover) and (pointer:fine){
+
+
+.project-image:hover .image-overlay{
+
+    opacity:1;
+
+    pointer-events:auto;
 
 }
 
-.more-btn:hover{
 
-    transform:translateY(-4px);
+.project-card:hover img{
 
-    box-shadow:
-
-    0 18px 35px rgba(59,130,246,.30);
+    transform:scale(1.08);
 
 }
+
+
+}
+
+
 
 /* =====================================================
-                    VIEW BRIEF
+              MOBILE TAP EFFECT
 ===================================================== */
 
-.brief-btn{
 
-    position:relative;
+.image-overlay.show-overlay{
 
-    overflow:hidden;
+    opacity:1;
 
-    width:max-content;
+    pointer-events:auto;
 
-    padding:15px 34px;
+}
 
-    border:none;
 
-    border-radius:999px;
 
-    cursor:pointer;
 
-    color:#fff;
+
+/* =====================================================
+              RESPONSIVE
+===================================================== */
+
+
+@media(max-width:950px){
+
+
+.projects{
+
+    padding:100px 5%;
+
+}
+
+
+
+.project-card{
+
+
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+    padding:28px;
+
+}
+
+
+
+.project-image{
+
+
+    height:300px;
+
+}
+
+
+
+.project-content h3{
+
+
+    font-size:36px;
+
+}
+
+
+
+.project-content p{
+
 
     font-size:15px;
 
-    font-weight:600;
+}
 
-    background:linear-gradient(
-    135deg,
-    #2563EB,
-    #8B5CF6);
 
-    transition:.35s;
-
-    box-shadow:
-
-    0 18px 35px rgba(59,130,246,.25);
 
 }
 
-.brief-btn::before{
 
-    content:"";
+@media(max-width:600px){
 
-    position:absolute;
 
-    left:-120%;
+.projects{
 
-    top:0;
+    padding:80px 5%;
+
+}
+
+
+
+.project-heading{
+
+    font-size:38px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.project-card{
+
+    padding:20px;
+
+    border-radius:24px;
+
+    gap:30px;
+
+}
+
+
+
+.project-image{
+
+    height:230px;
+
+    border-radius:20px;
+
+}
+
+
+
+.image-overlay{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    gap:12px;
+
+}
+
+
+
+.image-overlay.show-overlay{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+
+.image-overlay a{
+
+    padding:10px 16px;
+
+    font-size:13px;
+
+}
+
+
+
+.project-content h3{
+
+    font-size:30px;
+
+}
+
+
+
+.project-content h5{
+
+    font-size:15px;
+
+}
+
+
+
+.project-content p{
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+
+.tech-container{
+
+    gap:10px;
+
+}
+
+
+
+.tech-icon{
+
+    padding:9px 13px;
+
+    font-size:13px;
+
+}
+
+
+
+.more-btn{
+
+    padding:10px 18px;
+
+}
+
+
+
+.brief-btn{
 
     width:100%;
 
-    height:100%;
-
-    background:linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    rgba(255,255,255,.35),
-
-    transparent);
-
-    transition:.8s;
+    padding:14px 20px;
 
 }
 
-.brief-btn:hover{
 
-    transform:translateY(-5px);
-
-    box-shadow:
-
-    0 25px 50px rgba(59,130,246,.35);
 
 }
 
-.brief-btn:hover::before{
 
-    left:120%;
+
+@media(max-width:400px){
+
+
+
+.project-card{
+
+
+    padding:16px;
+
+}
+
+
+
+.project-image{
+
+
+    height:210px;
+
+}
+
+
+
+.image-overlay a{
+
+
+    padding:9px 13px;
+
+    font-size:12px;
+
+
+}
+
+
+
+.project-content h3{
+
+
+    font-size:26px;
+
+
+}
+
+
 
 }

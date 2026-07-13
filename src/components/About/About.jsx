@@ -1,101 +1,209 @@
 import "./About.css";
 import { motion } from "framer-motion";
 import {
-  FaCode,
-  FaLaptopCode,
   FaGraduationCap,
   FaMapMarkerAlt,
+  FaLaptopCode,
+  FaCode,
 } from "react-icons/fa";
 
 function About() {
   return (
     <section className="about section" id="about">
+
       <div className="container about-container">
+
+        {/* LEFT */}
 
         <motion.div
           className="about-left"
-          initial={{ opacity: 0, x: -80 }}
+          initial={{ opacity: 0, x: -70 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+
           <h5>ABOUT ME</h5>
 
           <h2>
-            Passionate Developer <span>& Problem Solver</span>
+            Building Digital Experiences,
+            <span> One Project at a Time.</span>
           </h2>
 
           <p>
-            I'm Roshan, a 3rd year Electronics & Communication Engineering
-            student at <strong>BIT Mesra</strong>.
+            I'm <strong>Roshan</strong>, a third-year Electronics &
+            Communication Engineering student at
+            <strong> BIT Mesra</strong>.
             I enjoy building modern full-stack web applications using the
-            MERN Stack and continuously improving my problem-solving skills
-            through Data Structures & Algorithms.
+            MERN Stack while continuously improving my
+            problem solving skills through Data Structures &
+            Algorithms.
           </p>
 
           <p>
-            Beyond coding, I enjoy creating content, exploring new
-            technologies, watching cricket and listening to music.
-            My goal is to build products that people genuinely enjoy using.
+            Beyond development, I enjoy exploring emerging
+            technologies, creating content, watching cricket,
+            listening to music and building products that combine
+            clean design with real world functionality.
           </p>
 
-          <div className="about-info">
+          <div className="about-grid">
 
-            <div>
+            <div className="info-card">
+
               <FaGraduationCap />
-              <span>BIT Mesra</span>
+
+              <div>
+
+                <h4>Education</h4>
+
+                <span>BIT Mesra</span>
+
+              </div>
+
             </div>
 
-            <div>
+            <div className="info-card">
+
               <FaMapMarkerAlt />
-              <span>Gorakhpur → Ranchi</span>
+
+              <div>
+
+                <h4>Location</h4>
+
+                <span>Gorakhpur • Ranchi</span>
+
+              </div>
+
             </div>
 
-            <div>
+            <div className="info-card">
+
               <FaLaptopCode />
-              <span>MERN Stack</span>
+
+              <div>
+
+                <h4>Specialization</h4>
+
+                <span>MERN Stack</span>
+
+              </div>
+
             </div>
 
-            <div>
+            <div className="info-card">
+
               <FaCode />
-              <span>Problem Solver</span>
+
+              <div>
+
+                <h4>Focus</h4>
+
+                <span>Problem Solving</span>
+
+              </div>
+
             </div>
 
           </div>
 
         </motion.div>
 
+        {/* RIGHT */}
+
         <motion.div
           className="about-right"
-          initial={{ opacity: 0, x: 80 }}
+          initial={{ opacity: 0, x: 70 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: .8 }}
           viewport={{ once: true }}
         >
 
-          <div className="stat-card">
-            <h1>2+</h1>
-            <p>Major Projects</p>
+          <div className="stats-grid">
+
+            <div className="stat-card">
+
+              <h1>2+</h1>
+
+              <p>Major Projects</p>
+
+            </div>
+
+            <div className="stat-card">
+
+              <h1>3+</h1>
+
+              <p>Core Technologies</p>
+
+            </div>
+
+            <div className="stat-card">
+
+              <h1>ECE</h1>
+
+              <p>3rd Year Student</p>
+
+            </div>
+
+            <div className="stat-card">
+
+              <h1>∞</h1>
+
+              <p>Always Learning</p>
+
+            </div>
+
           </div>
 
-          <div className="stat-card">
-            <h1>3rd</h1>
-            <p>Year Student</p>
-          </div>
+          <div className="focus-card">
 
-          <div className="stat-card">
-            <h1>100%</h1>
-            <p>Learning Mindset</p>
-          </div>
+            <h3>Current Focus</h3>
 
-          <div className="stat-card">
-            <h1>MERN</h1>
-            <p>Full Stack Development</p>
+            <div className="progress-item">
+
+              <span>MERN Development</span>
+
+              <div className="progress">
+                <div
+                  className="progress-fill"
+                  style={{ width: "95%" }}
+                ></div>
+              </div>
+
+            </div>
+
+            <div className="progress-item">
+
+              <span>DSA & Problem Solving</span>
+
+              <div className="progress">
+                <div
+                  className="progress-fill"
+                  style={{ width: "65%" }}
+                ></div>
+              </div>
+
+            </div>
+
+            <div className="progress-item">
+
+              <span>AI / ML</span>
+
+              <div className="progress">
+                <div
+                  className="progress-fill"
+                  style={{ width: "1%" }}
+                ></div>
+              </div>
+
+            </div>
+
           </div>
 
         </motion.div>
 
       </div>
+
     </section>
   );
 }

@@ -1,57 +1,211 @@
 import "./Navbar.css";
-import { useState, useEffect } from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { useEffect, useState } from "react";
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 
-const navItems = [
-  "Home",
-  "About",
-  "Skills",
-  "Projects",
-  "Contact",
-];
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
 
-    window.addEventListener("scroll", handleScroll);
+const [scrolled,setScrolled]=useState(false);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const [menuOpen,setMenuOpen]=useState(false);
 
-  return (
-    <nav className={scrolled ? "navbar navbar-scroll" : "navbar"}>
-      <div className="logo">
-        <div className="logo-circle">R</div>
-        <span>Roshan</span>
-      </div>
 
-      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-        {navItems.map((item) => (
-          <li key={item}>
-            <a
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
-            </a>
-          </li>
-        ))}
-      </ul>
 
-      <button
-        className="menu-btn"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? <HiX /> : <HiMenuAlt3 />}
-      </button>
-    </nav>
-  );
+useEffect(()=>{
+
+
+const handleScroll=()=>{
+
+setScrolled(window.scrollY > 20);
+
+};
+
+
+window.addEventListener(
+"scroll",
+handleScroll
+);
+
+
+
+return()=>{
+
+window.removeEventListener(
+"scroll",
+handleScroll
+);
+
+};
+
+
+},[]);
+
+
+
+
+
+useEffect(()=>{
+
+
+if(menuOpen){
+
+document.body.style.overflow="hidden";
+
 }
+
+else{
+
+document.body.style.overflow="auto";
+
+}
+
+
+
+return()=>{
+
+document.body.style.overflow="auto";
+
+};
+
+
+},[menuOpen]);
+
+
+
+
+
+const closeMenu=()=>{
+
+setMenuOpen(false);
+
+};
+
+
+
+
+
+return(
+
+
+<header 
+className={`navbar ${scrolled ? "scrolled" : ""}`}
+>
+
+
+<div className="container nav-container">
+
+
+
+
+
+<a
+
+href="#home"
+
+className="logo"
+
+onClick={closeMenu}
+
+>
+
+Roshan<span>.</span>
+
+</a>
+
+
+
+
+
+
+
+<nav
+
+className={
+menuOpen
+?
+"nav-links active"
+:
+"nav-links"
+}
+
+>
+
+
+<a href="#home" onClick={closeMenu}>
+Home
+</a>
+
+
+<a href="#about" onClick={closeMenu}>
+About
+</a>
+
+
+<a href="#skills" onClick={closeMenu}>
+Tech Stack
+</a>
+
+
+<a href="#projects" onClick={closeMenu}>
+Projects
+</a>
+
+
+<a href="#contact" onClick={closeMenu}>
+Contact
+</a>
+
+
+</nav>
+
+
+
+
+
+
+<button
+
+className="menu-btn"
+
+onClick={()=>setMenuOpen(!menuOpen)}
+
+aria-label="Menu"
+
+>
+
+
+{
+
+menuOpen
+
+?
+
+<HiOutlineX/>
+
+:
+
+<HiOutlineMenuAlt3/>
+
+}
+
+
+</button>
+
+
+
+
+
+</div>
+
+
+</header>
+
+
+)
+
+
+}
+
 
 export default Navbar;

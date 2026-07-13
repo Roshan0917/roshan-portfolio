@@ -6,7 +6,9 @@ import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
-  FaEnvelope
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPaperPlane
 } from "react-icons/fa";
 
 import "./Contact.css";
@@ -15,265 +17,472 @@ import "./Contact.css";
 function Contact() {
 
 
-const form = useRef();
+  const form = useRef();
 
-const [status,setStatus] = useState("");
+  const [status, setStatus] = useState("");
 
 
 
-const sendEmail = (e)=>{
+  const sendEmail = (e) => {
 
-e.preventDefault();
+    e.preventDefault();
 
 
-emailjs
-.sendForm(
-"Roshan0917",
-"template_sur70xl",
-form.current,
-"ZYyp7LPBJgI6F0Ssz"
-)
+    emailjs
+      .sendForm(
+        "Roshan0917",
+        "template_sur70xl",
+        form.current,
+        "ZYyp7LPBJgI6F0Ssz"
+      )
 
-.then(()=>{
+      .then(() => {
 
-setStatus("Message Sent Successfully 🚀");
+        setStatus("Message sent successfully 🚀");
 
-form.current.reset();
+        form.current.reset();
 
-})
+      })
 
-.catch((error)=>{
+      .catch((error) => {
 
-console.log(error);
+        console.log(error);
 
-setStatus("Something went wrong ❌");
+        setStatus("Something went wrong ❌");
 
-});
+      });
 
+  };
 
-};
 
 
+  return (
 
-return (
 
-<section className="contact-section" id="contact">
+    <section className="contact-section" id="contact">
 
 
-<motion.h2
+      <motion.h2
 
-className="contact-title"
+        className="contact-title"
 
-initial={{opacity:0,y:40}}
+        initial={{
+          opacity: 0,
+          y: 40
+        }}
 
-whileInView={{opacity:1,y:0}}
+        whileInView={{
+          opacity: 1,
+          y: 0
+        }}
 
-transition={{duration:.7}}
+        viewport={{
+          once: true
+        }}
 
->
+        transition={{
+          duration: 0.7
+        }}
 
-Let's <span>Connect</span>
+      >
 
-</motion.h2>
+        Let's <span>Connect</span>
 
+      </motion.h2>
 
 
 
-<div className="contact-container">
 
 
+      <div className="contact-container">
 
-{/* LEFT */}
 
 
-<motion.div
 
-className="contact-info"
 
-initial={{opacity:0,x:-50}}
+        {/* LEFT CONTACT CARD */}
 
-whileInView={{opacity:1,x:0}}
 
->
 
+        <motion.div
 
-<h2>
+          className="contact-info"
 
-Let's Build Something Amazing 🚀
+          initial={{
+            opacity: 0,
+            x: -50
+          }}
 
-</h2>
+          whileInView={{
+            opacity: 1,
+            x: 0
+          }}
 
+          viewport={{
+            once: true
+          }}
 
-<p>
+          transition={{
+            duration: 0.7
+          }}
 
-Have an idea, project or opportunity?
-Feel free to reach out. I would love
-to connect and collaborate.
+        >
 
-</p>
 
 
+          <div className="availability">
 
-<div className="info-item">
+            <span></span>
 
-<FaEnvelope/>
+            Available for opportunities
 
-<a href="mailto:sroshan0917@gmail.com">
+          </div>
 
-sroshan0917@gmail.com
 
-</a>
 
-</div>
 
+          <h2>
 
+            Let's build something amazing 🚀
 
+          </h2>
 
-<div className="socials">
 
-  <a
-    href="https://github.com/Roshan0917"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="GitHub"
-  >
-    <FaGithub />
-  </a>
 
-  <a
-    href="https://www.linkedin.com/in/roshan-kumar-770180395/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
-  >
-    <FaLinkedin />
-  </a>
 
-  <a
-    href="https://www.instagram.com/roshan09_12/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-  >
-    <FaInstagram />
-  </a>
+          <p>
 
-</div>
+            Have an idea, project or collaboration
+            opportunity? Feel free to reach out.
+            I would love to connect and create
+            something impactful together.
 
+          </p>
 
-</motion.div>
 
 
 
+          <div className="info-item">
 
 
+            <FaEnvelope />
 
-{/* RIGHT FORM */}
 
+            <a href="mailto:sroshan0917@gmail.com">
 
+              sroshank0917@gmail.com
 
-<motion.form
+            </a>
 
-ref={form}
 
-onSubmit={sendEmail}
+          </div>
 
-className="contact-form"
 
 
-initial={{opacity:0,x:50}}
 
-whileInView={{opacity:1,x:0}}
 
->
+          <div className="info-item">
 
 
-<input
+            <FaMapMarkerAlt />
 
-type="text"
 
-name="user_name"
+            <span>
 
-placeholder="Your Name"
+              India
 
-required
+            </span>
 
-/>
 
+          </div>
 
 
-<input
 
-type="email"
 
-name="user_email"
 
-placeholder="Your Email"
 
-required
+          <div className="socials">
 
-/>
 
+            <a
 
+              href="https://github.com/Roshan0917"
 
-<input
+              target="_blank"
 
-type="text"
+              rel="noopener noreferrer"
 
-name="subject"
+              aria-label="Github"
 
-placeholder="Subject"
+            >
 
-required
+              <FaGithub />
 
-/>
+            </a>
 
 
 
-<textarea
 
-name="message"
 
-placeholder="Your Message"
+            <a
 
-rows="5"
+              href="https://www.linkedin.com/in/roshan-kumar-770180395/"
 
-required
+              target="_blank"
 
-></textarea>
+              rel="noopener noreferrer"
 
+              aria-label="LinkedIn"
 
+            >
 
+              <FaLinkedin />
 
-<button type="submit">
+            </a>
 
-Send Message 🚀
 
-</button>
 
 
 
-<p className="status">
+            <a
 
-{status}
+              href="https://www.instagram.com/roshan09_12/"
 
-</p>
+              target="_blank"
 
+              rel="noopener noreferrer"
 
+              aria-label="Instagram"
 
-</motion.form>
+            >
 
+              <FaInstagram />
 
+            </a>
 
 
-</div>
+          </div>
 
 
-</section>
 
-)
+
+        </motion.div>
+
+
+
+
+
+
+
+
+
+        {/* CONTACT FORM */}
+
+
+
+
+
+        <motion.form
+
+
+          ref={form}
+
+
+          onSubmit={sendEmail}
+
+
+          className="contact-form"
+
+
+
+          initial={{
+
+            opacity: 0,
+
+            x: 50
+
+          }}
+
+
+
+          whileInView={{
+
+
+            opacity: 1,
+
+            x: 0
+
+
+          }}
+
+
+
+          viewport={{
+
+            once: true
+
+          }}
+
+
+
+          transition={{
+
+
+            duration: 0.7
+
+
+          }}
+
+
+
+        >
+
+
+
+
+
+          <div className="form-heading">
+
+
+            <h3>
+
+              Send me a message
+
+            </h3>
+
+
+
+            <p>
+
+              I'll get back to you as soon as possible.
+
+            </p>
+
+
+          </div>
+
+
+
+
+
+
+
+          <input
+
+            type="text"
+
+            name="user_name"
+
+            placeholder="Your Name"
+
+            required
+
+          />
+
+
+
+
+
+
+
+          <input
+
+            type="email"
+
+            name="user_email"
+
+            placeholder="Your Email"
+
+            required
+
+          />
+
+
+
+
+
+
+
+
+          <input
+
+            type="text"
+
+            name="subject"
+
+            placeholder="Subject"
+
+            required
+
+          />
+
+
+
+
+
+
+
+
+          <textarea
+
+            name="message"
+
+            placeholder="Your Message"
+
+            rows="5"
+
+            required
+
+          ></textarea>
+
+
+
+
+
+
+
+          <button type="submit">
+
+
+            <FaPaperPlane />
+
+            Send Message
+
+
+          </button>
+
+
+
+
+
+
+          <p className="status">
+
+            {status}
+
+          </p>
+
+
+
+
+
+        </motion.form>
+
+
+
+
+
+      </div>
+
+
+
+    </section>
+
+
+  );
 
 }
+
 
 
 export default Contact;

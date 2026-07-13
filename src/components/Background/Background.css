@@ -2,23 +2,30 @@
             GLOBAL BACKGROUND
 ========================================== */
 
+
 .background{
 
-    position:fixed;
+    position:absolute;
 
-    inset:0;
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
 
     overflow:hidden;
 
-    z-index:-10;
+    z-index:-1;
 
     pointer-events:none;
 
 }
 
-/* ==========================================
-            COMMON GLOW
-========================================== */
+
+
+
 
 .gradient{
 
@@ -36,9 +43,11 @@
 
 }
 
-/* ==========================================
-            BLUE
-========================================== */
+
+
+
+
+/* BLUE */
 
 .one{
 
@@ -46,10 +55,12 @@
 
     height:420px;
 
+
     background:radial-gradient(circle,
     rgba(59,130,246,.9),
     rgba(59,130,246,.25),
     transparent 72%);
+
 
     top:-180px;
 
@@ -57,9 +68,11 @@
 
 }
 
-/* ==========================================
-            PURPLE
-========================================== */
+
+
+
+
+/* PURPLE */
 
 .two{
 
@@ -67,110 +80,194 @@
 
     height:460px;
 
+
     background:radial-gradient(circle,
     rgba(139,92,246,.85),
     rgba(139,92,246,.22),
     transparent 72%);
 
-    right:-180px;
 
     top:180px;
+
+    right:-120px;
+
 
     animation-delay:4s;
 
 }
 
-/* ==========================================
-            CYAN
-========================================== */
+
+
+
+
+/* CYAN */
 
 .three{
+
 
     width:380px;
 
     height:380px;
+
 
     background:radial-gradient(circle,
     rgba(6,182,212,.8),
     rgba(6,182,212,.18),
     transparent 72%);
 
+
+
     bottom:-180px;
 
     left:38%;
+
 
     animation-delay:8s;
 
 }
 
-/* ==========================================
-            EXTRA GLOW
-========================================== */
 
-.background::before{
 
-    content:"";
 
-    position:absolute;
 
-    inset:0;
-
-    background:
-
-    radial-gradient(circle at 20% 20%,
-    rgba(255,255,255,.025),
-    transparent 35%),
-
-    radial-gradient(circle at 80% 70%,
-    rgba(255,255,255,.02),
-    transparent 30%);
-
-}
-
-/* ==========================================
-            FLOATING
-========================================== */
 
 @keyframes floatBlob{
 
-    0%{
 
-        transform:
-        translate(0,0)
-        scale(1);
+0%{
 
-    }
+transform:translate(0,0) scale(1);
 
-    25%{
+}
 
-        transform:
-        translate(40px,-30px)
-        scale(1.08);
 
-    }
+25%{
 
-    50%{
+transform:translate(25px,-20px) scale(1.05);
 
-        transform:
-        translate(-20px,35px)
-        scale(.95);
+}
 
-    }
 
-    75%{
+50%{
 
-        transform:
-        translate(35px,20px)
-        scale(1.06);
+transform:translate(-15px,25px) scale(.95);
 
-    }
+}
 
-    100%{
 
-        transform:
-        translate(0,0)
-        scale(1);
+75%{
 
-    }
+transform:translate(20px,15px) scale(1.03);
+
+}
+
+
+100%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+.gradient{
+
+filter:blur(100px);
+
+opacity:.20;
+
+}
+
+
+
+
+.one{
+
+width:260px;
+
+height:260px;
+
+left:-130px;
+
+top:-100px;
+
+}
+
+
+
+
+.two{
+
+width:260px;
+
+height:260px;
+
+right:-130px;
+
+top:200px;
+
+}
+
+
+
+
+.three{
+
+width:230px;
+
+height:230px;
+
+left:35%;
+
+bottom:-100px;
+
+}
+
+
+}
+
+@media(max-width:600px){
+
+.gradient{
+
+    filter:blur(100px);
+
+}
+
+
+.one{
+
+    width:280px;
+    height:280px;
+    left:-120px;
+
+}
+
+
+.two{
+
+    width:300px;
+    height:300px;
+    right:-120px;
+
+}
+
+
+.three{
+
+    width:250px;
+    height:250px;
+    left:20%;
+
+}
 
 }

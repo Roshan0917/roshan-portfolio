@@ -1,396 +1,608 @@
-/* ==========================================
-                CONTACT SECTION
-========================================== */
+  .contact-section{
 
-.contact-section{
+padding:130px 8%;
 
-    position:relative;
+position:relative;
 
-    padding:120px 8%;
+overflow:hidden;
 
 }
+
+
+
+.contact-section::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+
+height:600px;
+
+background:#2563eb;
+
+filter:blur(180px);
+
+opacity:.12;
+
+top:-200px;
+
+left:-200px;
+
+}
+
+
+
 
 .contact-title{
 
-    text-align:center;
+text-align:center;
 
-    font-size:56px;
+font-size:58px;
 
-    font-weight:800;
+font-weight:900;
 
-    color:#fff;
+color:white;
 
-    margin-bottom:70px;
+margin-bottom:80px;
 
 }
+
+
 
 .contact-title span{
 
-    background:linear-gradient(
-    135deg,
-    #3B82F6,
-    #8B5CF6);
+background:
 
-    -webkit-background-clip:text;
+linear-gradient(
+135deg,
+#3b82f6,
+#8b5cf6
+);
 
-    color:transparent;
+-webkit-background-clip:text;
+
+color:transparent;
 
 }
 
-/* ==========================================
-                CONTAINER
-========================================== */
+
+
+
 
 .contact-container{
 
-    display:grid;
 
-    grid-template-columns:1fr 1.2fr;
+display:grid;
 
-    gap:35px;
+grid-template-columns:
+
+.9fr 1.1fr;
+
+
+gap:35px;
+
 
 }
 
-/* ==========================================
-                GLASS CARD
-========================================== */
+
+
 
 .contact-info,
 .contact-form{
 
-    background:rgba(255,255,255,.05);
 
-    border:1px solid rgba(255,255,255,.08);
+padding:42px;
 
-    backdrop-filter:blur(22px);
 
-    border-radius:26px;
+border-radius:30px;
 
-    padding:40px;
 
-    transition:.4s;
+background:
+
+rgba(255,255,255,.05);
+
+
+border:
+
+1px solid rgba(255,255,255,.1);
+
+
+backdrop-filter:blur(25px);
+
+
+transition:.4s;
+
 
 }
+
+
+
+
 
 .contact-info:hover,
 .contact-form:hover{
 
-    transform:translateY(-8px);
 
-    border-color:rgba(59,130,246,.25);
+transform:translateY(-10px);
 
-    box-shadow:
-    0 25px 60px rgba(59,130,246,.12);
+
+box-shadow:
+
+0 30px 80px rgba(59,130,246,.18);
+
+
+border-color:
+
+rgba(96,165,250,.35);
+
 
 }
 
-/* ==========================================
-                LEFT
-========================================== */
+
+
+
+
+/* LEFT */
+
+
+.availability{
+
+
+display:flex;
+
+
+align-items:center;
+
+
+gap:10px;
+
+
+width:max-content;
+
+
+padding:8px 15px;
+
+
+border-radius:50px;
+
+
+font-size:13px;
+
+
+color:#60a5fa;
+
+
+background:
+
+rgba(96,165,250,.12);
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.availability span{
+
+
+width:9px;
+
+height:9px;
+
+border-radius:50%;
+
+background:#22c55e;
+
+
+}
+
+
+
+
 
 .contact-info h2{
 
-    color:#fff;
 
-    font-size:34px;
+font-size:38px;
 
-    margin-bottom:18px;
+
+color:white;
+
+
+line-height:1.3;
+
+
+margin-bottom:20px;
+
 
 }
+
+
 
 .contact-info p{
 
-    color:#94A3B8;
 
-    line-height:1.9;
+color:#94a3b8;
 
-    margin-bottom:35px;
+
+line-height:1.8;
+
+
+margin-bottom:35px;
+
 
 }
+
+
+
+
 
 .info-item{
 
-    display:flex;
 
-    align-items:center;
+display:flex;
 
-    gap:16px;
 
-    margin-bottom:22px;
+align-items:center;
+
+
+gap:15px;
+
+
+margin-bottom:20px;
+
+
+color:#e2e8f0;
+
 
 }
+
+
 
 .info-item svg{
 
-    color:#3B82F6;
 
-    font-size:22px;
+color:#60a5fa;
+
+
+font-size:22px;
+
 
 }
+
+
 
 .info-item a{
 
-    color:#E2E8F0;
 
-    text-decoration:none;
+color:#e2e8f0;
 
-    transition:.3s;
 
-}
+text-decoration:none;
 
-.info-item a:hover{
-
-    color:#3B82F6;
 
 }
 
-/* ==========================================
-                SOCIALS
-========================================== */
+
+
+
+
+
 
 .socials{
 
-    display:flex;
 
-    gap:18px;
+display:flex;
 
-    margin-top:40px;
+
+gap:18px;
+
+
+margin-top:40px;
+
 
 }
+
+
+
+
 
 .socials a{
 
-    width:54px;
 
-    height:54px;
+width:55px;
 
-    border-radius:50%;
 
-    display:flex;
+height:55px;
 
-    justify-content:center;
 
-    align-items:center;
+display:flex;
 
-    color:#fff;
 
-    text-decoration:none;
+align-items:center;
 
-    font-size:22px;
 
-    background:rgba(255,255,255,.05);
+justify-content:center;
 
-    border:1px solid rgba(255,255,255,.08);
 
-    transition:.35s;
+border-radius:50%;
+
+
+font-size:23px;
+
+
+color:white;
+
+
+background:
+
+rgba(255,255,255,.06);
+
+
+border:
+
+1px solid rgba(255,255,255,.1);
+
+
+transition:.35s;
+
 
 }
+
+
+
 
 .socials a:hover{
 
-    background:linear-gradient(
-    135deg,
-    #3B82F6,
-    #8B5CF6);
 
-    transform:translateY(9px);
+transform:translateY(-8px);
 
-    box-shadow:
-    0 18px 35px rgba(59,130,246,.25);
+
+background:
+
+linear-gradient(
+135deg,
+#2563eb,
+#8b5cf6
+);
+
 
 }
 
-/* ==========================================
-                FORM
-========================================== */
+
+
+
+
+/* FORM */
+
+
+.form-heading h3{
+
+
+font-size:30px;
+
+color:white;
+
+
+margin-bottom:8px;
+
+
+}
+
+
+
+.form-heading p{
+
+
+color:#94a3b8;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
 
 .contact-form{
 
-    display:flex;
 
-    flex-direction:column;
+display:flex;
 
-    gap:20px;
+
+flex-direction:column;
+
+
+gap:18px;
+
 
 }
+
+
 
 .contact-form input,
 .contact-form textarea{
 
-    width:100%;
 
-    padding:16px 18px;
+padding:16px 18px;
 
-    border-radius:16px;
 
-    border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
 
-    background:rgba(255,255,255,.04);
 
-    color:#fff;
+border:
 
-    font-size:15px;
+1px solid rgba(255,255,255,.1);
 
-    transition:.3s;
 
-    outline:none;
+background:
+
+rgba(255,255,255,.04);
+
+
+color:white;
+
+
+outline:none;
+
+
+font-size:15px;
+
 
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
 
-    color:#94A3B8;
-
-}
 
 .contact-form input:focus,
 .contact-form textarea:focus{
 
-    border-color:#3B82F6;
 
-    box-shadow:
-    0 0 0 4px rgba(59,130,246,.15);
+border-color:#60a5fa;
 
-}
 
-.contact-form textarea{
+box-shadow:
 
-    resize:none;
+0 0 0 4px rgba(96,165,250,.15);
+
 
 }
 
-/* ==========================================
-                BUTTON
-========================================== */
+
+
+
 
 .contact-form button{
 
-    position:relative;
 
-    overflow:hidden;
+display:flex;
 
-    padding:16px;
 
-    border:none;
+align-items:center;
 
-    border-radius:999px;
 
-    background:linear-gradient(
-    135deg,
-    #2563EB,
-    #8B5CF6);
+justify-content:center;
 
-    color:#fff;
 
-    font-size:16px;
+gap:10px;
 
-    font-weight:600;
 
-    cursor:pointer;
+padding:16px;
 
-    transition:.35s;
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:
+
+linear-gradient(
+135deg,
+#2563eb,
+#8b5cf6
+);
+
+
+color:white;
+
+
+font-size:16px;
+
+
+font-weight:700;
+
+
+cursor:pointer;
+
+
+transition:.35s;
+
 
 }
+
+
 
 .contact-form button:hover{
 
-    transform:translateY(-5px);
 
-    box-shadow:
-    0 20px 40px rgba(59,130,246,.30);
+transform:translateY(-5px);
 
-}
 
-.contact-form button::before{
+box-shadow:
 
-    content:"";
+0 25px 50px rgba(59,130,246,.35);
 
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:100%;
-
-    height:100%;
-
-    background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.35),
-    transparent);
-
-    transition:.8s;
 
 }
 
-.contact-form button:hover::before{
 
-    left:120%;
-
-}
-
-/* ==========================================
-                STATUS
-========================================== */
 
 .status{
 
-    color:#60A5FA;
 
-    text-align:center;
+text-align:center;
 
-    margin-top:5px;
+
+color:#60a5fa;
+
 
 }
 
-/* ==========================================
-                RESPONSIVE
-========================================== */
 
-@media(max-width:950px){
+
+
+@media(max-width:900px){
+
 
 .contact-container{
 
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 
 }
+
 
 .contact-title{
 
-    font-size:42px;
+font-size:42px;
 
 }
 
+
 }
+
+
 
 @media(max-width:600px){
 
+
 .contact-section{
 
-    padding:90px 7%;
+padding:90px 6%;
 
 }
+
+
 
 .contact-info,
 .contact-form{
 
-    padding:28px;
+padding:28px;
 
 }
 
-.contact-title{
 
-    font-size:34px;
-
-}
 
 .contact-info h2{
 
-    font-size:28px;
+font-size:30px;
 
 }
+
 
 }

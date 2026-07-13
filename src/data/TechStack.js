@@ -1,5 +1,6 @@
 import {
   SiHtml5,
+  SiCss,
   SiJavascript,
   SiReact,
   SiNodedotjs,
@@ -10,152 +11,225 @@ import {
   SiPostman,
   SiVercel,
   SiCplusplus,
-  SiRedux,
-  SiTailwindcss,
-  SiBootstrap,
-  SiMongoose,
-  SiCloudinary,
 } from "react-icons/si";
 
-import {
-  FaCss3Alt,
-  FaDatabase,
-  FaRoute,
-} from "react-icons/fa";
 
-export const techStack = [
+const techStack = [
 
-  {
-    name: "HTML5",
-    icon: SiHtml5,
-    level: "Advanced",
-    desc: "Semantic HTML, Forms & Responsive Layouts."
-  },
+{
+title:"HTML5",
+icon:SiHtml5,
+color:"#E34F26",
 
-  {
-    name: "CSS3",
-    icon: FaCss3Alt,
-    level: "Advanced",
-    desc: "Responsive Design, Animations & Glassmorphism."
-  },
+category:"Frontend",
 
-  {
-    name: "JavaScript",
-    icon: SiJavascript,
-    level: "Advanced",
-    desc: "ES6+, Async/Await, DOM & API Integration."
-  },
+desc:
+"Building semantic, accessible and SEO-friendly web structures.",
 
-  {
-    name: "React.js",
-    icon: SiReact,
-    level: "Advanced",
-    desc: "Hooks, Components, State Management & SPA."
-  },
+usedIn:
+"Portfolio • Wanderlust • Zerodha Clone"
 
-  {
-    name: "React Router",
-    icon: FaRoute,
-    level: "Intermediate",
-    desc: "Client-side Routing & Protected Routes."
-  },
+},
 
-  {
-    name: "Bootstrap",
-    icon: SiBootstrap,
-    level: "Advanced",
-    desc: "Responsive UI with Bootstrap Components."
-  },
 
-  {
-    name: "Tailwind CSS",
-    icon: SiTailwindcss,
-    level: "Intermediate",
-    desc: "Utility-first CSS for Modern UI Design."
-  },
 
-  {
-    name: "Redux",
-    icon: SiRedux,
-    level: "Intermediate",
-    desc: "Global State Management in React."
-  },
+{
+title:"CSS3",
+icon:SiCss,
+color:"#1572B6",
 
-  {
-    name: "Node.js",
-    icon: SiNodedotjs,
-    level: "Advanced",
-    desc: "Backend Development & RESTful APIs."
-  },
+category:"Frontend",
 
-  {
-    name: "Express.js",
-    icon: SiExpress,
-    level: "Advanced",
-    desc: "Authentication, Routing & Middleware."
-  },
+desc:
+"Creating responsive layouts, animations and modern UI experiences.",
 
-  {
-    name: "MongoDB",
-    icon: SiMongodb,
-    level: "Advanced",
-    desc: "Collections, CRUD & MongoDB Atlas."
-  },
+usedIn:
+"Portfolio • Wanderlust • Zerodha Clone"
 
-  {
-    name: "Mongoose",
-    icon: SiMongoose,
-    level: "Advanced",
-    desc: "Schema Design, Models & Data Validation."
-  },
+},
 
-  {
-    name: "REST API",
-    icon: FaDatabase,
-    level: "Advanced",
-    desc: "RESTful API Development & Integration."
-  },
 
-  {
-    name: "Cloudinary",
-    icon: SiCloudinary,
-    level: "Intermediate",
-    desc: "Cloud Image Upload & Optimization."
-  },
 
-  {
-    name: "Git",
-    icon: SiGit,
-    level: "Intermediate",
-    desc: "Version Control & Branch Management."
-  },
+{
+title:"JavaScript",
+icon:SiJavascript,
+color:"#F7DF1E",
 
-  {
-    name: "GitHub",
-    icon: SiGithub,
-    level: "Intermediate",
-    desc: "Repositories, Collaboration & Deployment."
-  },
+category:"Frontend",
 
-  {
-    name: "Postman",
-    icon: SiPostman,
-    level: "Intermediate",
-    desc: "API Testing, Collections & Debugging."
-  },
+desc:
+"Developing interactive features and dynamic application logic.",
 
-  {
-    name: "Vercel",
-    icon: SiVercel,
-    level: "Intermediate",
-    desc: "Frontend Deployment & Continuous Delivery."
-  },
+usedIn:
+"All Web Projects"
 
-  {
-    name: "C++",
-    icon: SiCplusplus,
-    level: "Advanced",
-    desc: "Data Structures, Algorithms & Problem Solving."
-  }
+},
+
+
+
+
+{
+title:"React",
+icon:SiReact,
+color:"#61DAFB",
+
+category:"Frontend",
+
+desc:
+"Building reusable components and scalable interactive interfaces.",
+
+usedIn:
+"Portfolio • Zerodha Clone"
+
+},
+
+
+
+
+{
+title:"Node.js",
+icon:SiNodedotjs,
+color:"#5FA04E",
+
+category:"Backend",
+
+desc:
+"Developing scalable server-side applications using JavaScript.",
+
+usedIn:
+"Wanderlust • Zerodha Clone"
+
+},
+
+
+
+
+{
+title:"Express.js",
+icon:SiExpress,
+color:"#ffffff",
+
+category:"Backend",
+
+desc:
+"Designing REST APIs, routing and backend application architecture.",
+
+usedIn:
+"Wanderlust • Zerodha Clone"
+
+},
+
+
+
+
+{
+title:"MongoDB",
+icon:SiMongodb,
+color:"#47A248",
+
+category:"Database",
+
+desc:
+"Managing flexible NoSQL databases with efficient data models.",
+
+usedIn:
+"Wanderlust • Zerodha Clone"
+
+},
+
+
+
+
+
+{
+title:"Git",
+icon:SiGit,
+color:"#F05032",
+
+category:"Tools",
+
+desc:
+"Managing source code, version history and development workflow.",
+
+usedIn:
+"Every Project"
+
+},
+
+
+
+
+{
+title:"GitHub",
+icon:SiGithub,
+color:"#ffffff",
+
+category:"Tools",
+
+desc:
+"Repository management, collaboration and project showcasing.",
+
+usedIn:
+"All Projects"
+
+},
+
+
+
+
+{
+title:"Postman",
+icon:SiPostman,
+color:"#FF6C37",
+
+category:"Tools",
+
+desc:
+"Testing, debugging and validating REST API endpoints.",
+
+usedIn:
+"Wanderlust • Zerodha Clone"
+
+},
+
+
+
+
+{
+title:"Vercel",
+icon:SiVercel,
+color:"#ffffff",
+
+category:"Deployment",
+
+desc:
+"Deploying and managing modern frontend applications.",
+
+usedIn:
+"Portfolio • Zerodha Clone"
+
+},
+
+
+
+
+{
+title:"C++",
+icon:SiCplusplus,
+color:"#00599C",
+
+category:"Programming",
+
+desc:
+"Solving Data Structures and Algorithms problems efficiently.",
+
+usedIn:
+"LeetCode • DSA Practice"
+
+}
+
 
 ];
+
+
+export default techStack;

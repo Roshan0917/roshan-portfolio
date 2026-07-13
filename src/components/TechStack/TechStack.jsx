@@ -1,159 +1,53 @@
-import { motion } from "framer-motion";
-import { techStack } from "../../data/TechStack";
 import "./TechStack.css";
-
+import techStack from "../../data/techStack";
+import TechCard from "./TechCard";
 
 function TechStack() {
+  return (
+    <section className="tech-section" id="skills">
 
+      <div className="container">
 
-return (
+        <span className="section-tag">
+          TECH ARSENAL
+        </span>
 
-<section className="tech-section" id="skills">
+       <h2 className="section-title">
 
+My
 
-<motion.h2
+<span>
+Technology Arsenal
+</span>
 
-className="section-title"
-
-initial={{
-opacity:0,
-y:40
-}}
-
-whileInView={{
-opacity:1,
-y:0
-}}
-
-transition={{
-duration:.7
-}}
-
->
-
-My <span>Tech Stack</span>
-
-</motion.h2>
-
-
+</h2>
 
 
 <p className="section-subtitle">
 
-Technologies and tools I use to build modern applications
+A collection of technologies I use to design,
+build and deploy scalable full-stack applications.
 
 </p>
 
+        <div className="tech-grid">
 
+          {techStack.map((tech, index) => (
 
+            <TechCard
+              key={tech.title}
+              tech={tech}
+              index={index}
+            />
 
+          ))}
 
-<div className="skills-grid">
+        </div>
 
+      </div>
 
-{
-
-techStack.map((skill,index)=>{
-
-
-const Icon = skill.icon;
-
-
-return (
-
-
-<motion.div
-
-
-className="skill-card"
-
-
-key={skill.name}
-
-
-initial={{
-
-opacity:0,
-
-y:50
-
-}}
-
-
-whileInView={{
-
-opacity:1,
-
-y:0
-
-}}
-
-
-transition={{
-
-duration:.5,
-
-delay:index*.08
-
-}}
-
-
-
-whileHover={{
-
-y:-12,
-
-scale:1.05
-
-}}
-
-
-
->
-
-
-
-<div className="icon-box">
-
-
-<Icon/>
-
-
-</div>
-
-
-
-<h3>
-
-{skill.name}
-
-</h3>
-
-
-</motion.div>
-
-
-
-)
-
-
-})
-
-
+    </section>
+  );
 }
-
-
-
-</div>
-
-
-
-
-</section>
-
-)
-
-}
-
 
 export default TechStack;

@@ -5,7 +5,7 @@ import Background from "../components/Background/Background";
 import TechStack from "../components/TechStack/TechStack";
 import Project from "../components/Projects/Project";
 import Contact from "../components/Contact/Contact";
-import Timeline from "../components/TimeLine/TimeLine";
+import TimeLine from "../components/TimeLine/TimeLine";
 import Footer from "../components/Footer/Footer";
 
 function Home() {
@@ -17,7 +17,7 @@ function Home() {
       <About />
       <TechStack />
       <Project />
-      <Timeline/>
+      <TimeLine/>
       <Contact />
       <Footer/>
     </>
